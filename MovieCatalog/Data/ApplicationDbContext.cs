@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MovieCatalog.Models;
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace MovieCatalog.Data
 {
-	public class ApplicationDbContext : DbContext
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 	{
-		public ApplicationDbContext(DbContextOptions options)
+		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
 		{
-
 		}
 
 		public DbSet<Movie> Movies { get; set; }
