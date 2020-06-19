@@ -1,6 +1,7 @@
-﻿@*@using System.Collections.Generic
+﻿@using System.Collections.Generic
 @using Microsoft.AspNetCore.Http
-@using Microsoft.AspNetCore.Http.Authentication
+@using Microsoft.AspNetCore.Identity;
+@*@using Microsoft.AspNetCore.Http.Authentication*@
 @model MovieCatalog.Models.AccountViewModels.LoginViewModel
 @inject SignInManager<ApplicationUser> SignInManager
 
@@ -55,4 +56,4 @@
 
 @section Scripts {
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-}*@
+}

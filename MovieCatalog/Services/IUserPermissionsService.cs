@@ -8,6 +8,7 @@ namespace MovieCatalog.Services
 {
 	public interface IUserPermissionsService
 	{
+		Boolean IsAuthenticated();
 		Boolean CanEditMovie(Movie movie);
 	}
 }

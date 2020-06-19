@@ -21,6 +21,16 @@ namespace MovieCatalog.Services
 
         private HttpContext HttpContext => this.httpContextAccessor.HttpContext;
 
+        public Boolean IsAuthenticated()
+        {
+            if (!this.HttpContext.User.Identity.IsAuthenticated)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public Boolean CanEditMovie(Movie movie)
         {
             if (!this.HttpContext.User.Identity.IsAuthenticated)
